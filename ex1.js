@@ -7,9 +7,10 @@ const removeButton = document.getElementById('remove')
 
 const text = document.getElementById('inputName').value
 
-const pDiPorcoDio = document.querySelector('p')
+const p = document.querySelector('p')
 
-let memoryArr
+let memoryArr = []
+
 if (localStorage.getItem(key)) {
   memoryArr = JSON.parse(localStorage.getItem(key))
 } else {
@@ -18,7 +19,7 @@ if (localStorage.getItem(key)) {
 
 if (memoryArr.length > 0) {
   let name = memoryArr.length[-1]
-  pDiPorcoDio.innerHTML = `${memoryArr[name]}`
+  p.innerText = `${memoryArr[name]}`
 }
 
 function buttonSave() {
